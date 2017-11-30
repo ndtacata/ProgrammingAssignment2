@@ -35,8 +35,9 @@ cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     mat <- x$getinverse()
     
-    ## Skip the solving part if 'mat' is already exists,
-    ## otherwise continue with solving for inverse
+    ## Skip the solving part if 'mat' is already exists in the cache,
+    ## otherwise continue with solving for inverse and set the
+	## value of the inverse in the cache via setinverse function
     if(!is.null(mat)){
         message("getting cached data")
         return(mat)
@@ -53,16 +54,16 @@ cacheSolve <- function(x, ...) {
 ## This part contains sample matrix for testing
 
 ## create a sample matrix
-InitMatrix <- matrix(5:8, 2, 2)
+##InitMatrix <- matrix(5:8, 2, 2)
 
 ## store matrix in a temporary matrix variable
-x <- makeCacheMatrix(InitMatrix)
+## x <- makeCacheMatrix(InitMatrix)
 
 ## get the inverse of the matrix
-cacheSolve(x)
+## cacheSolve(x)
 
 ## Result
-    [,1] [,2]
-[1,]   -4  3.5
-[2,]    3 -2.5
+##    [,1] [,2]
+## [1,]   -4  3.5
+## [2,]    3 -2.5
 
